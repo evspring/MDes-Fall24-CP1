@@ -1,7 +1,113 @@
 body {
-    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222222;
+    background-color: #f0f0f0;
 }
 
 img {
     max-width: 100%;
+    width: 100%;
+}
+
+header nav {
+    background-color:wheat
+}
+
+header nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+header nav ul li {
+    padding: 16px;
+    text-align: center;
+    border-bottom: 1px solid #000000;
+}
+
+header ul li:last-child {
+    border-bottom: none;
+}
+
+header ul a {
+    text-decoration: none;
+    color: #222222;
+}
+
+#home {
+
+background-color: aliceblue;
+
+}
+
+#about {
+
+    background-color: antiquewhite;
+}
+
+#contact {
+
+background-color: blue;
+
+}
+
+.main_section {
+    padding: 16px;
+}
+
+
+/* TABLET SIZED SCREENS */
+@media (min-width: 768px){
+    header nav ul{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    header nav {
+        background-color:aqua;
+    }
+
+    header nav ul li {
+        border-bottom: none;
+    }
+
+    #home {
+        background-color: chartreuse;
+    }
+
+    .main_section {
+        font-family:'Times New Roman', Times, serif;
+    }
+}
+
+/*DESKTOP SIZED SCREENS*/
+@media (min-width: 1024px){
+    header nav ul{
+        justify-content: flex-end;
+    }
+
+    header nav {
+    background-color: rgb(165, 36, 122);
+    }
+
+    #home {
+        background-color: crimson;
+    }
+
+    main {
+        width: 1024px;
+        margin: auto;
+    }
+
+    img {
+        width: auto;
+    }
+
+    .main_section {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
 }
