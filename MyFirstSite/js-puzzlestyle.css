@@ -18,12 +18,13 @@
 }
 #Content {
   background-color: #ffffff;
-  text-align: center
+  text-align: center;
+  
 }
 
 #contentEnd {
-  text-align: center
-  padding: 20px
+  text-align: center;
+  padding: 100px;
 }
 
 #hintBtn {
