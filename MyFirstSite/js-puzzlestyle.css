@@ -1,0 +1,96 @@
+#myImage {
+  display: none;
+  width: 300px;
+  height: auto;
+}
+#Title {
+    color: rgb(255, 255, 255) ;
+    font-family:'Courier New', Courier, monospace;
+    font-size: large;
+    background-color:black
+}
+
+#myText {
+  display: none; 
+  font-size: 18px;
+  color: #333;
+}
+#Content {
+  background-color: #ffffff;
+}
+
+#hintBtn {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgb(220 0 0 / 100%);
+    background-image: linear-gradient(
+      to top left,
+      rgb(0 0 0 / 20%),
+      rgb(0 0 0 / 20%) 30%,
+      rgb(0 0 0 / 0%)
+    );
+    box-shadow:
+      inset 2px 2px 3px rgb(255 255 255 / 60%),
+      inset -2px -2px 3px rgb(0 0 0 / 60%);
+  }
+
+  #correctButton {
+    border: 0.2;
+    line-height: 0.2;
+    padding: 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #000000;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+  }    
+
+  #Button2 {
+    border: 0.2;
+    line-height: 0.2;
+    padding: 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #000000;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+}
+
+#Button3 {
+  border: 0.2;
+  line-height: 0.2;
+  padding: 20px;
+  font-size: 1rem;
+  text-align: center;
+  color: #000000;
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255);
+}
+
+#Button4 {
+  border: 0.2;
+  line-height: 0.2;
+  padding: 20px;
+  font-size: 1rem;
+  text-align: center;
+  color: #000000;
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255);
+}
+
+#Button5 {
+  border: 0.2;
+  line-height: 0.2;
+  padding: 20px;
+  font-size: 1rem;
+  text-align: center;
+  color: #000000;
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255);
+}

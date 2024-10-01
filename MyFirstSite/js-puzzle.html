@@ -1,11 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Puzzle!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle Image on Button Click</title>
+  <link rel="stylesheet" type="text/css" href="js-puzzlestyle.css">
 </head>
 <body>
-    <h1>Click the button to begin.</h1>
+
+<header id=Title>
+    <h1>Choose a button, pick correctly and be rewarded.</h1>
+</header>
+
+<main id=Content>
+
+  <Button id="correctButton" onclick="toggleImage()">Button 1</button>
+
+  <img id="myImage" src="https://hips.hearstapps.com/womansday/assets/17/39/cola-0247.jpg" alt="Sample Image">
+
+  <button id="Button2">Button 2</button>
+  <button id="Button3">Button 3</button>
+  <button id="Button4">Button 4</button>
+  <button id="Button5">Button 5</button>
+
+  <p>Good Luck!</p>
+
+</main>
+
+<footer id="contentEnd">
+
+    <button id="hintBtn" onclick="showText()">Need a hint?</button>
+
+    <p id="myText">To find the reward some buttons may need to be pressed more then once :)</p>
+
+</footer>
+
+  <script>
+
+    //Showing Image (reward)
+    function toggleImage() {
+      var img = document.getElementById('myImage');
+      var button = document.querySelector('button');
+      
+      if (img.style.display === 'none') {
+        img.style.display = 'block'; 
+        button.textContent = 'Hide Image'; 
+      } else {
+        img.style.display = 'none'; 
+        button.textContent = 'Button 1'; 
+      }
+    }
+
+    //Showing Text
+    function showText() {
+        document.getElementById('myText').style.display = 'block';
+    }
+  </script>
+
 </body>
 </html>
+
