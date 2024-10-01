@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What JS can do</title>
+    <style>
+        main,footer {
+            height: 300px;
+        }
+    </style>
+
+    
+</head>
+<body>
+    <header id="myHeader">
+        <button id="colorBtn">Random color</button>
+    </header>
+
+    <main id="myMainElem">
+
+
+    </main>
+
+    <footer>
+
+    </footer>
+    <script>
+        let mainE = document.getElementById("myMainElem")
+        let clrButton = document.getElementById("colorBtn")
+
+        mainE.innerHTML = "<h1>Hello, World!<h1>"
+
+        clrButton.addEventListener("click", function(){
+            let valueR = Math.random() * 255
+            let valueG = Math.random() * 255
+            let valueB = Math.random() * 255
+        
+            console.log("Red: " + valueR)
+            console.log("Green: " + valueG)
+            console.log("Blue: " + valueB)
+        
+            mainE.style.backgroundColor = "rgb(" + valueR + ", " + valueG + ", " + valueB +")"  
+        })
+    </script>
+</body>
+</html>
