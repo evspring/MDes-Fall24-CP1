@@ -5,9 +5,11 @@ body {
 
 #myImage {
   display: none;
-  width: 300px;
+  width: 600px;
   height: auto;
+  justify-content: center;
 }
+
 #Title {
     color: rgb(255, 255, 255) ;
     font-family:'Courier New', Courier, monospace;
@@ -22,6 +24,13 @@ body {
   font-size: 18px;
   color: #333;
 }
+
+#luck {
+  margin-top: 30px;
+  text-align: center;
+  font-size: large;
+}
+
 #Content {
   background-color: #fffbda;
   text-align: center;
@@ -29,9 +38,6 @@ body {
   
 }
 
-#gl {
-  padding: 50px;
-}
 
 #contentEnd {
   text-align: center;
