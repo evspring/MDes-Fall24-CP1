@@ -1,3 +1,8 @@
+body {
+  background-color: #fffbda;
+}
+
+
 #myImage {
   display: none;
   width: 300px;
@@ -8,7 +13,8 @@
     font-family:'Courier New', Courier, monospace;
     font-size: large;
     background-color:black;
-    text-align: center
+    text-align: center;
+    padding: 20px;
 }
 
 #myText {
@@ -17,14 +23,20 @@
   color: #333;
 }
 #Content {
-  background-color: #ffffff;
+  background-color: #fffbda;
   text-align: center;
+  padding: 20px;
   
+}
+
+#gl {
+  padding: 50px;
 }
 
 #contentEnd {
   text-align: center;
   padding: 100px;
+  background-color: #fffbda;
 }
 
 #hintBtn {
