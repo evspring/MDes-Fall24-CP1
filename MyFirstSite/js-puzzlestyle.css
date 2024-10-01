@@ -21,6 +21,11 @@
   text-align: center
 }
 
+#contentEnd {
+  text-align: center
+  padding: 20px
+}
+
 #hintBtn {
     border: 0;
     line-height: 2.5;
