@@ -34,7 +34,9 @@ body {
 #Content {
   background-color: #fffbda;
   text-align: center;
-  padding: 20px;
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
   
 }
 
@@ -43,6 +45,7 @@ body {
   text-align: center;
   padding: 100px;
   background-color: #fffbda;
+
 }
 
 #hintBtn {
