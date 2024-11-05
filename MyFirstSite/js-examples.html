@@ -45,3 +45,53 @@
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//PLACEHOLDER//
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Puzzle!</title>
+    <style>
+        #myImage {
+            display: none; /*hide image*/
+            width: 300px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Select a button, choose correctly and be rewarded.</h1>
+
+    <button id="showImageBtn">Button 1</button>
+    <img id="myImage" src="https://hips.hearstapps.com/womansday/assets/17/39/cola-0247.jpg" alt="cute smiling dog"> 
+
+    <script>
+        // Ensure the DOM is fully loaded before attaching event listener
+        document.addEventListener('DOMContentLoaded', function() {
+          document.getElementById('showImageBtn').addEventListener('click', function() {
+            var img = document.getElementById('myImage');
+            if (img.style.display === 'none') {
+              img.style.display = 'block'; // Show the image
+            }
+          });
+        });
+      </script>
+</body>
+</html>
