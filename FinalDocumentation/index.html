@@ -17,21 +17,28 @@
         Ideally, it’d be able to tell how many people are in the camera frame, for example in this image below it’d be able to differentiate each of the individual faces and make separate frames for each of them.
         </p1>
 
+    </div>
+
     <div>
-    <img src = "GroupPhoto.jpg"><img>
 
-    <p2>I’d also love if it could do facial tracking and be able to tell where faces are and be able to display that. I feel like I essentially want to create that CCTV footage program that detects faces and people.
-    </p2>
+     <img src = "GroupPhoto.jpg"><img>
 
-    <p3>The first thing I did was dive into the ml5.js reference tab and look into what kinds of facial recognition features existed in the ml5 library. I found something called BodyPose which is a “The ml5.js BodyPose is a pretrained full-body pose estimation model that can estimate poses and track key body parts in real-time.” This proved to be very helpful for starting out and understanding what I was working with in ml5. However I really wanted something that would be more specific to the face and not the pose, so I needed to continue looking further. 
+        <p2>I’d also love if it could do facial tracking and be able to tell where faces are and be able to display that. I feel like I essentially want to create that CCTV footage program that detects faces and people.
+        </p2>
 
-    </p3>
+     <p3>The first thing I did was dive into the ml5.js reference tab and look into what kinds of facial recognition features existed in the ml5 library. I found something called BodyPose which is a “The ml5.js BodyPose is a pretrained full-body pose estimation model that can estimate poses and track key body parts in real-time.” This proved to be very helpful for starting out and understanding what I was working with in ml5. However I really wanted something that would be more specific to the face and not the pose, so I needed to continue looking further. 
 
-    <img src = "BodyPose.png"><img>
+        </p3>
 
-    <p4> Now that I know roughly what I want to do, I needed to find a library to further support what I was doing. I browsed around a bit, looking into both YouTube tutorials and the ml5 library and eventually found FaceMesh, which was exactly what I was looking for. 
-    </p4>
+    </div>
 
+    <div>
+        <img src = "BodyPose.png"><img>
+
+        <p4> Now that I know roughly what I want to do, I needed to find a library to further support what I was doing. I browsed around a bit, looking into both YouTube tutorials and the ml5 library and eventually found FaceMesh, which was exactly what I was looking for. 
+        </p4>
+
+    </div>
     <img src = "FaceMesh.png"><img>
 
     <p5> By following the instructions and example code provided by ML5, I was able to incorporate facial tracking into my p5 file. It now looked something like this:
