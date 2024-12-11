@@ -1,24 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js"></script>
+    <script src="https://unpkg.com/ml5@1/dist/ml5.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Word Ordering Code</title>
 </head>
 <body>
-    <h1>Word Ordering Code</h1>
+    <h1>Word Ordering Code (available at bottom of page)</h1>
 
-    <p1>As much as I would've love for the code to be accessible here, directly through GitHub I unfortunately could not get camera permissions to cooperate. A link to the code can be found below.</p1>
-    <div>
-        <h2>Letter Organization: https://editor.p5js.org/evan.a.springer/full/ZOC8ZzLdV</h2>
-    </div>
-
-    <div>
-        <p>
-
-        </p>
 
     </div>
+
+    <script>
+        let video; let handPose; let hands = [];
+        let font; let size = 35;
+        let words = []; let num = 5;
+        
+        function preload() {
+          font = loadFont("Outfit-VariableFont_wght.ttf");
+          handPose = ml5.handPose({flipped: true});
+        }
+        
+        function setup() {
+          createCanvas(640, 480);
+          video = createCapture(VIDEO,{flipped:true},function(){});
+          video.hide();
+          handPose.detectStart(video, gotHands);
+          
+          //creating word boxes
+          rectMode(CENTER);
+          for (let i=0; i<num; i++) {
+            words[i] = new Word();
+          }
+        }
+        
+        function draw() {
+          background(220);
+          
+          // detect thumb and index keypoints
+          image(video, 0, 0, width, height);
+          if (hands.length > 0) {
+            let index = hands[0].keypoints[8];
+            let thumb = hands[0].keypoints[4];
+            
+            noFill();
+            stroke(0, 255, 0);
+            text("index", index.x, index.y);
+            text("thumb", thumb.x, thumb.y);
+          
+            for (let i=0; i<num; i++) {
+              words[i].touch(thumb.x, thumb.y, index.x, index.y);
+            }
+          }
+          
+          for (let i=0; i<num; i++) {
+            words[i].display();
+          }
+        }
+        
+        function gotHands(results) {
+          hands = results;
+        }
+    
+        let textWords = ["Interaction", "Design", "Prototype", "ArtCenter"];
+    
+        class Word {
+      constructor() {
+        this.t = random(textWords);
+        this.x = random(width);
+        this.y = random(height);
+        this.angle = random(TWO_PI);
+        this.c = color(255);
+        
+        this.bbox = font.textBounds(this.t, this.x, this.y, size);
+        this.pos = createVector(this.bbox.x, this.bbox.y);
+        this.w = this.bbox.w;
+        this.h = this.bbox.h;
+        
+        this.fingerx = 0;
+        this.fingery = 0;
+      }
+      
+      display() {
+       //moving boxes to fit in frame and rotate randomly
+        push();
+        translate(this.pos.x, this.pos.y);
+        rotate(this.angle);
+        fill(this.c);
+        rect(0, 0, this.w, this.h);
+    
+      //creating word box style
+        fill(0);
+        noStroke();
+        textFont(font);
+        textSize(size/2);
+        textAlign(CENTER, CENTER);
+        text(this.t, 0, 0);
+        pop();
+        
+        fill(255, 0, 0);
+        ellipse(this.fingerx, this.fingery, 10, 10);
+      }
+      //allowing for "touch" controls with grabbing and dropping
+      touch(thumbx, thumby, indexx, indexy) {
+        let distBetweenFingers = dist(thumbx, thumby, indexx, indexy);
+        this.fingerx = abs(thumbx - indexx) + min(thumbx, indexx);
+        this.fingery = abs(thumby - indexy) + min(thumby, indexy);
+        
+        let distFromFingers = dist(this.pos.x, this.pos.y, this.fingerx, this.fingery);
+        
+        if (distBetweenFingers < 40 && distFromFingers < this.w/2) {
+          this.c = color(255, 0, 0);
+          this.pos.x = this.fingerx;
+          this.pos.y = this.fingery;
+        } else {
+          this.c = color(255);
+        }
+      }
+        }
+    </script>
 
     <div>
 
@@ -213,7 +316,7 @@
 
         </p>
     </div>
-    <p>This project absolutely would not have been feasible for me without some wonderful YouTube tutorials. In that regard I'd love to give credit to the Channels "The Coding Train", "Patt Vira", "Kazuki Umeda", and many others. The tips and showcases of how to use the ml5 library with p5 were invaluable. I also would have loved to get this fully working on GitHub but after 4+ hours of troubleshooting, asking questions and looking things up online I could not figure out how to get it to show up. Hopefully, this will be an acceptable alternative.</p>
+    <p>This project absolutely would not have been feasible for me without some wonderful YouTube tutorials. In that regard I'd love to give credit to the Channels "The Coding Train", "Patt Vira", "Kazuki Umeda", and many others. The tips and showcases of how to use the ml5 library with p5 were invaluable. </p>
     
 
 </body>
